@@ -4,7 +4,6 @@ let scrollMenu = document.querySelector('header ');
 let heightHeader = document.querySelector('header ').offsetHeight;
 let menus = document.querySelectorAll('header .menu ul li a');
 
-
 //menu
 menus.forEach(function(element,index){
     element.addEventListener('click',function(e){
@@ -16,8 +15,8 @@ menus.forEach(function(element,index){
             window.scrollTo({
                 top:  section.offsetTop - heightHeader,
                 behavier: 'smooth',
-                });
             });
+            }); 
         });
 });
 //menu full
@@ -49,11 +48,11 @@ getMenuFull.forEach(function(element,index){
         });
 });
 
-
+//scroll header
 window.addEventListener('scroll',function(){
-    let heightHeader = document.querySelector('header ').offsetHeight;
+    let heightHeader = document.querySelector('.product ').offsetHeight;
     let posiProduct = window.pageYOffset;
-    if(posiProduct > positionProduct + heightHeader)
+        if(posiProduct >  heightHeader)
     {scrollMenu.style.position = 'fixed';}
     else 
     {scrollMenu.style.position = 'absolute' ;}
@@ -113,6 +112,8 @@ jQuery(document).ready(function(){
     contain: true ,
     wrapAround: true,
     prevNextButtons: false,
+    autoPlay: true,
+    autoPlay: 1500 
   })
   });
   var carousel = $('.slider__item-wrap');
